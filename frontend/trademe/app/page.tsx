@@ -30,8 +30,10 @@ export default function Home() {
   }, []);
 
   type Order = {
-    data: string;
-    myid: number;
+    id: number;
+    name: string;
+    buynow: string;
+    shipping: string;
   };
 
   return (
