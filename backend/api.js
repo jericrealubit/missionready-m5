@@ -34,7 +34,7 @@ app.post("/api", (req, res) => {
 // GET http://localhost:4000/api/660536e5385d61dd4ddb35ec
 app.get("/api/:id", (req, res) => {
   const query = {
-    _id: ObjectId(req.params.id),
+    id: req.params.id,
   };
   console.log(query);
   collection.findOne(query, (err, result) => {
@@ -45,7 +45,7 @@ app.get("/api/:id", (req, res) => {
 
 // PUT http://localhost:4000/api/66052a43b273baef73696d6e
 app.put("/api/:id", (req, res) => {
-  const query = { _id: ObjectId(req.params.id) };
+  const query = { id: req.params.id };
   let newvalues = { $set: req.body };
   collection.updateOne(query, newvalues, (err, result) => {
     if (err) throw err;
@@ -55,7 +55,7 @@ app.put("/api/:id", (req, res) => {
 
 // DELETE http://localhost:4000/api/66052a43b273baef73696d6e
 app.delete("/api/:id", (req, res) => {
-  const query = { _id: ObjectId(req.params.id) };
+  const query = { id: req.params.id };
   collection.deleteOne(query, (err, result) => {
     if (err) throw err;
   });
