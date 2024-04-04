@@ -78,7 +78,8 @@
 main,
 nav,
 header,
-footer {
+footer,
+body {
   @apply max-w-6xl mx-auto my-12;
 }
 p {

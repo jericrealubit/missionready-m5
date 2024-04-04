@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="text-slate-500">
+    <footer className="text-slate-500 cursor">
       <div className="flex flex-row justify-between pt-8 pb-8">
         <div className="flex flex-row justify-left w-3/5 m-auto">
           <div>
@@ -82,25 +82,33 @@ const Footer = () => {
       <div className="flex flex-row w-full justify-between mt-10 mb-10">
         <div>© 2024 Trade Me Limited</div>
         <div>
-          <ul className="flex flex-row">
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
+          <ul className="flex flex-row space-x-6">
+            <li>Desktop site</li>
+            <li>About us</li>
+            <li>Careers</li>
+            <li>Advertise</li>
+            <li>Privacy policy</li>
+            <li>Terms & conditions</li>
+            <li>Contact us</li>
           </ul>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row space-x-6">
           <div>
             <Image
-              src="/images/icons/facebook-icon.jpg"
-              width={100}
-              height={100}
+              src="/icons/facebook-icon.png"
+              width={20}
+              height={20}
+              alt="facebook-icon"
             />
           </div>
-          <div>twitter ling</div>
+          <div>
+            <Image
+              src="/icons/twitter-icon.png"
+              width={20}
+              height={20}
+              alt="twitter-icon"
+            />
+          </div>
         </div>
       </div>
     </footer>
