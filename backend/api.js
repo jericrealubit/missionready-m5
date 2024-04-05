@@ -16,6 +16,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
+// FETCH ALL
 app.get("/api", (req, res) => {
   collection.find().toArray((err, result) => {
     if (err) throw err;
@@ -23,6 +24,7 @@ app.get("/api", (req, res) => {
   });
 });
 
+// INSERT RECORD
 app.post("/api", (req, res) => {
   // res.send("Create New User")
   collection.insertOne(req.body, (err, result) => {
@@ -31,7 +33,7 @@ app.post("/api", (req, res) => {
   });
 });
 
-// GET http://localhost:4000/api/660536e5385d61dd4ddb35ec
+// GET - FETCH ONE RECORD
 app.get("/api/:id", (req, res) => {
   const query = {
     id: req.params.id,
@@ -43,7 +45,7 @@ app.get("/api/:id", (req, res) => {
   });
 });
 
-// PUT http://localhost:4000/api/66052a43b273baef73696d6e
+// PUT - UPDATE RECORD
 app.put("/api/:id", (req, res) => {
   const query = { id: req.params.id };
   let newvalues = { $set: req.body };
@@ -53,7 +55,7 @@ app.put("/api/:id", (req, res) => {
   res.send("1 document updated.");
 });
 
-// DELETE http://localhost:4000/api/66052a43b273baef73696d6e
+// DELETE - DELETE ONE RECORD
 app.delete("/api/:id", (req, res) => {
   const query = { id: req.params.id };
   collection.deleteOne(query, (err, result) => {
@@ -61,36 +63,6 @@ app.delete("/api/:id", (req, res) => {
   });
   res.send("1 document deleted.");
 });
-
-// router
-//   .route("/:id")
-//   .get((req, res) => {
-//     //res.send(`Get a User with ID: ${req.params.id}`)
-//     const query = {
-//       _id: ObjectId(req.params.id),
-//     };
-//     collection.findOne(query, (err, result) => {
-//       if (err) throw err;
-//       res.send(result);
-//     });
-//   })
-//   .put((req, res) => {
-//     //res.send(`Update a User with ID: ${req.params.id}`)
-//     const query = { _id: ObjectId(req.params.id) };
-//     let newvalues = { $set: req.body };
-//     collection.updateOne(query, newvalues, (err, result) => {
-//       if (err) throw err;
-//     });
-//     res.send("1 document updated.");
-//   })
-//   .delete((req, res) => {
-//     //res.send(`Delete a User with ID: ${req.params.id}`)
-//     const query = { _id: ObjectId(req.params.id) };
-//     collection.deleteOne(query, (err, result) => {
-//       if (err) throw err;
-//     });
-//     res.send("1 document deleted.");
-//   });
 
 app.listen(4000, function () {
   console.log("app listening on port 4000!");
