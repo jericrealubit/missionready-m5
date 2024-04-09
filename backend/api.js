@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { collection, ObjectId } = require("./db-config");
+const { collection } = require("./db-config");
 
 const app = express();
 //const router = express.Router();
@@ -35,8 +35,9 @@ app.post("/api", (req, res) => {
 
 // GET - FETCH ONE RECORD
 app.get("/api/:id", (req, res) => {
+  //  res.send(req.params.id);
   const query = {
-    id: req.params.id,
+    id: parseInt(req.params.id),
   };
   console.log(query);
   collection.findOne(query, (err, result) => {
@@ -47,7 +48,7 @@ app.get("/api/:id", (req, res) => {
 
 // PUT - UPDATE RECORD
 app.put("/api/:id", (req, res) => {
-  const query = { id: req.params.id };
+  const query = { id: parseInt(req.params.id) };
   let newvalues = { $set: req.body };
   collection.updateOne(query, newvalues, (err, result) => {
     if (err) throw err;
@@ -57,7 +58,7 @@ app.put("/api/:id", (req, res) => {
 
 // DELETE - DELETE ONE RECORD
 app.delete("/api/:id", (req, res) => {
-  const query = { id: req.params.id };
+  const query = { id: parseInt(req.params.id) };
   collection.deleteOne(query, (err, result) => {
     if (err) throw err;
   });
