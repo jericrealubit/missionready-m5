@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -37,7 +38,7 @@ export default function Home() {
   type Product = {
     id: number;
     name: string;
-    buynow: string;
+    price: number;
     shipping: string;
   };
 
@@ -81,7 +82,12 @@ export default function Home() {
                 <div>Add to cart</div>
               </div>
             </div>
-            <h2>${products.price}</h2>
+            <h2>
+              {new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+              }).format(products.price)}
+            </h2>
           </div>
           <div className="text-slate-500 text-sm mt-5 mb-8">
             <div className="flex flex-row space-x-2 mt-2 mb-2">
@@ -102,7 +108,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-slate-200 px-5 py-3 rounded-md">
+          <div className="bg-slate-200 px-5 py-3 rounded-md w-full">
             <div className="font-bold">Bid closes: Mon 25th Mar, 11:00pm</div>
             <div className="text-sm">4 days, 22 hours, 21 minutes</div>
           </div>
@@ -164,7 +170,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-row justify-between mt-10">
-        <div>
+        <div className="w-2/3 mr-10">
           <div>
             <h2>Product Info</h2>
           </div>
@@ -185,11 +191,55 @@ export default function Home() {
                 <span className="font-bold">Grey</span>
               </div>
             </div>
-            <div></div>
+            <div>
+              <p>Madeleine Chaise Sofa - Heritage (RRP: $3499) </p>
+              <p>
+                This sofa is being auctioned off as a result of an insurance
+                claim, It has a few burn holes on one of the cushions where you
+                sit (See Photos)
+              </p>
+              <p>
+                Looking over the rest of the sofa its tidy with no rips or
+                tears, But it is dirty and will require a good clean.
+              </p>
+              <p>
+                The sofa separates into two pieces for easy transportation.
+                <ul className="list-disc list-inside pl-5">
+                  <li>Madeleine Chaise Sofa - Storm</li>
+                  <li>Dimensions: 270L x 200W x 91H x 91D</li>
+                  <li>Seat Height: 49cm</li>
+                  <li>
+                    Materials: 100% polyester fabric, high-density foam, pine
+                    frame and birch leg
+                  </li>
+                </ul>
+              </p>
+              <p>
+                For more information:{" "}
+                <Link
+                  href="https://loftfurniture.co.nz/sofas/madeleine-chaise-sofa-heritage"
+                  className="text-blue-400 "
+                >
+                  https://loftfurniture.co.nz/sofas/madeleine-chaise-sofa-heritage
+                </Link>
+              </p>
+              <p>
+                Pickup is from our Office, In the Auckland CBD, By Arrangement.
+              </p>
+              <p>
+                ::Auction Terms:: Payment for this auction is required within 2
+                days This item is sold on behalf of our vendor, both Twice & our
+                vendor are 'in trade'
+              </p>
+              <p>
+                Save us as a 'Favorite Seller' so you don't miss out on future
+                auctions.
+              </p>
+            </div>
           </div>
         </div>
         <div className="w-96">
-          <h3 className="font-bold">Saved products (10)</h3>
+          <h3 className="font-bold mb-5">Saved products (10)</h3>
           <Image
             src="/images/products/saved-product.png"
             alt="save-product"
@@ -198,16 +248,6 @@ export default function Home() {
           />
         </div>
       </div>
-      <ul>
-        {products.price}
-        {/* {products.length > 0 &&
-          products.map((product: Product) => (
-            <li key={product.id}>
-              {product.id} - {product.name} - {product.price} -{" "}
-              {product.shipping}
-            </li>
-          ))} */}
-      </ul>
     </main>
   );
 }
