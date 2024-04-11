@@ -2,21 +2,20 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://missionready-m2.vercel.app/)
+### Landing Page
+[![landing-page-screenshot][landing-page-screenshot]]
 
-### URL: https://missionready-m2.vercel.app/
+### Docker container
+[![docker-container-screenshot][docker-container-screenshot]]
 
-#### Presentation:
+### Presentation:
 
-https://www.loom.com/share/0bc3928fe023479495ecb9e552a16f57?sid=b3b80ef7-1859-4f5a-b05a-d5457ca51e38
 
 ### Built With
 
-[![Azure AI][azure-ai]][Azure-AI-Custom-Vision-url]
 [![Next.js][Next.js]][Next-url]
 [![Typescript][typescript]][Typescript-url]
 [![Tailwind css][tailwindcss]][Tailwind-url]
-[![vercel][vercel]][vercel-url]
 [![mongodb][mongodb]][mongodb-url]
 
 [azure-ai]: https://img.shields.io/badge/azure-ai-green?style=for-the-badge&logo=microsoft&logoColor=blue
