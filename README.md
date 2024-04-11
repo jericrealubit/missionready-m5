@@ -23,7 +23,8 @@ https://www.loom.com/share/0bc3928fe023479495ecb9e552a16f57?sid=b3b80ef7-1859-4f
 [Azure-AI-Custom-Vision-url]: https://azure.microsoft.com/en-us/products/ai-services/ai-custom-vision
 [typescript]: https://img.shields.io/badge/typescript-ts-blue?style=for-the-badge&logo=typescript&logoColor=blue
 [Typescript-url]: https://www.typescriptlang.org/
-[product-screenshot]: public/images/screenshot.png
+[landing-page-screenshot]: landing-page.png
+[docker-container-screenshot]: docker-container.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [tailwindcss]: https://img.shields.io/badge/Tailwind-css-blue?style=for-the-badge&logo=tailwindcss&logoColor=blue
