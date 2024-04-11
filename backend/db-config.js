@@ -6,8 +6,8 @@ const DB_USER = "admin";
 const DB_PASS = "supersecret";
 
 // when starting app locally, use
-const uri = `mongodb://${DB_USER}:${DB_PASS}@localhost:27017`;
-//const uri = `mongodb://${DB_USER}:${DB_PASS}@mongodb`; // docker compose
+//const uri = `mongodb://${DB_USER}:${DB_PASS}@localhost:27017`;
+const uri = `mongodb://${DB_USER}:${DB_PASS}@mongodb`; // docker compose
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
