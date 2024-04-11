@@ -10,6 +10,7 @@ import {
   ShoppingCartIcon,
   TruckIcon,
   Bars3CenterLeftIcon,
+  CurrencyDollarIcon,
 } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
@@ -172,12 +173,12 @@ export default function Home() {
       <div className="flex flex-row justify-between mt-10">
         <div className="w-2/3 mr-10">
           <div>
-            <h2>Product Info</h2>
+            <div className="text-6xl">Product Info</div>
           </div>
           <div className="ml-10">
-            <div className=" mt-10 flex flex-row space-x-2">
-              <Bars3CenterLeftIcon className="h-8 w-8" />
-              <div className=" text-2xl">Description</div>
+            <div className=" mt-10 mb-10 flex flex-row space-x-2">
+              <Bars3CenterLeftIcon className="h-10 w-10" />
+              <div className=" text-4xl">Description</div>
             </div>
             <div className="flex flex-row mt-5 space-x-20">
               <div>
@@ -235,6 +236,38 @@ export default function Home() {
                 Save us as a 'Favorite Seller' so you don't miss out on future
                 auctions.
               </p>
+            </div>
+            <div>
+              <div className="flex flex-row space-x-2 mt-10 mb-10">
+                <TruckIcon className="h-10 w-10" />
+                <div className="text-4xl ">Delivery options</div>
+              </div>
+              <div className="text-2xl text-slate-500">
+                Buyer must pick up from Auckland City, Auckland (Free)
+              </div>
+            </div>
+            <div className="mt-10 mb-10 flex flex-row space-x-2">
+              <div>
+                <CurrencyDollarIcon className="h-10 w-10" />
+              </div>
+              <div className="text-4xl">Payment options</div>
+            </div>
+            <div className="mt-10 mb-10">
+              <div>
+                <Image
+                  src="/images/ping.png"
+                  alt="save-product"
+                  width={130}
+                  height={130}
+                />
+              </div>
+              <div className="text-slate-500 text-2xl mt-5">
+                Pay instantly by card, Ping balance or saved bank account.
+              </div>
+            </div>
+            <div className="text-slate-500 text-2xl">
+              <div className="font-bold">Other options</div>
+              <div>NZ Bank deposit</div>
             </div>
           </div>
         </div>
